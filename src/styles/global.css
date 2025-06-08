@@ -1,0 +1,119 @@
+/* tailwind.config.css */
+@import 'tailwindcss';
+
+/* Custom theme configuration */
+@theme {
+	/* If you need custom spacing, colors, etc., define them here */
+
+	/* Example of how to define custom values in v4:
+  --spacing-custom: 2.5rem;
+  --color-brand: #3b82f6;
+  */
+}
+
+/* Plugin-like functionality for markdown base styles */
+@layer base {
+	.content {
+		/* Base markdown styles - you'll need to manually define these */
+		/* since the plugin approach changes in v4 */
+
+		/* Headings */
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			@apply font-bold leading-tight;
+		}
+
+		h1 {
+			@apply text-4xl mb-4;
+		}
+		h2 {
+			@apply text-3xl mb-3;
+		}
+		h3 {
+			@apply text-2xl mb-2;
+		}
+		h4 {
+			@apply text-xl mb-2;
+		}
+		h5 {
+			@apply text-lg mb-1;
+		}
+		h6 {
+			@apply text-base mb-1;
+		}
+
+		/* Paragraphs */
+		p {
+			@apply mb-4 leading-relaxed;
+		}
+
+		/* Lists */
+		ul,
+		ol {
+			@apply mb-4 pl-6;
+		}
+
+		ul {
+			@apply list-disc;
+		}
+
+		ol {
+			@apply list-decimal;
+		}
+
+		li {
+			@apply mb-1;
+		}
+
+		/* Links */
+		a {
+			@apply text-blue-600 hover:text-blue-800 underline;
+		}
+
+		/* Code */
+		code {
+			@apply bg-gray-100 px-1 py-0.5 rounded text-sm font-mono;
+		}
+
+		pre {
+			@apply bg-gray-100 p-4 rounded overflow-x-auto mb-4;
+		}
+
+		pre code {
+			@apply bg-transparent p-0;
+		}
+
+		/* Blockquotes */
+		blockquote {
+			@apply border-l-4 border-gray-300 pl-4 italic mb-4;
+		}
+
+		/* Tables */
+		table {
+			@apply w-full border-collapse mb-4;
+		}
+
+		th,
+		td {
+			@apply border border-gray-300 px-3 py-2 text-left;
+		}
+
+		th {
+			@apply bg-gray-100 font-semibold;
+		}
+
+		/* Images */
+		img {
+			@apply max-w-full h-auto rounded;
+		}
+
+		/* Horizontal rules */
+		hr {
+			@apply border-t border-gray-300 my-6;
+		}
+	}
+}
