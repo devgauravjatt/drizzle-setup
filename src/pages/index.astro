@@ -1,10 +1,14 @@
 ---
-import Welcome from '../components/readme.md'
+import Welcome from '../components/welcome.astro'
+import Readme from '../components/readme.md'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout>
-	<div class='content max-w-3xl mx-auto mt-10'>
+	<div class='my-8'>
 		<Welcome />
+		<div class='content max-w-3xl mx-auto mt-10'>
+			<Readme />
+		</div>
 	</div>
 </Layout>
