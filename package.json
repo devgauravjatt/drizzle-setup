@@ -1,6 +1,6 @@
 {
 	"name": "drizzle-setup",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"private": false,
 	"description": "A powerful CLI tool to automatically scaffold and configure database setup using Drizzle ORM for PostgreSQL,SQLite,MySQL and More.",
 	"keywords": [
@@ -44,6 +44,7 @@
 		"build": "tsdown",
 		"lint": "biome lint",
 		"format": "biome format --write",
+		"release": "bumpp && pnpm build && pnpm format && pnpm lint && pnpm publish",
 		"copy-templates": "xcopy \"templates\" \"dist\\templates\" /E /I /Y",
 		"link": "pnpm run build && pnpm copy-templates && pnpm link"
 	},
@@ -51,6 +52,7 @@
 		"@biomejs/biome": "1.9.4",
 		"@types/fs-extra": "^11.0.4",
 		"@types/node": "^22.15.30",
+		"bumpp": "^10.1.1",
 		"drizzle-kit": "^0.31.1",
 		"drizzle-orm": "^0.44.2",
 		"tsdown": "latest",
