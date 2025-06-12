@@ -1,6 +1,10 @@
 import fs from 'fs-extra'
 
-async function createConfigFile(drizzle_configTargetPath: string, drizzle_configPath: string, dbPath: string) {
+async function createConfigFile(
+	drizzle_configTargetPath: string,
+	drizzle_configPath: string,
+	dbPath: string,
+) {
 	// Read the template file content as text
 	let content = await fs.readFile(drizzle_configPath, 'utf-8')
 

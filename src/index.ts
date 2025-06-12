@@ -9,13 +9,15 @@ import createConfigFile from './utils/drizzle-config-update'
 import pkgMangerRun from './utils/pkg-manger-run'
 import dbLists, { dbListsByValue } from './configs/dblists'
 import UpdateScripts from './utils/update-scripts'
+import MySQLlDatabasesConfigs, { getMySQLlDatabasesConfigs } from './configs/databases/mysql'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const databaseConfigs = [...PostgresqlDatabasesConfigs, ...SQLiteDatabasesConfigs]
+const databaseConfigs = [...PostgresqlDatabasesConfigs, ...SQLiteDatabasesConfigs, ...MySQLlDatabasesConfigs]
 
 const databaseGroups = {
 	PostgreSQL: getPostgresqlDatabasesConfigs(),
 	SQLite: getSQLiteDatabasesConfigs(),
+	MySQL: getMySQLlDatabasesConfigs(),
 }
 
 const dbGroup = await select({
@@ -49,7 +51,6 @@ if (dbPath === undefined) {
 }
 
 // move to template = dbPath
-
 const dbConfig = databaseConfigs.find((config) => config.path === dbOption)
 
 if (dbConfig === undefined) {
@@ -136,6 +137,8 @@ try {
 	)
 } catch (err) {
 	s.stop('🚨 Failed to install packages')
-	console.error('😞 Installation failed. Please check your internet connection and \nverify that your package manager is installed and functioning correctly.')
+	console.error(
+		'😞 Installation failed. Please check your internet connection and \nverify that your package manager is installed and functioning correctly.',
+	)
 	process.exit(1)
 }

@@ -44,9 +44,8 @@
 		"build": "tsdown",
 		"lint": "biome lint",
 		"format": "biome format --write",
-		"dev": "bun src/index.ts",
 		"copy-templates": "xcopy \"templates\" \"dist\\templates\" /E /I /Y",
-		"link": "bun run build && bun copy-templates && bun link"
+		"link": "pnpm run build && pnpm copy-templates && pnpm link"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
