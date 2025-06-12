@@ -35,20 +35,21 @@
 	},
 	"license": "MIT",
 	"type": "module",
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"main": "./dist/index.js",
 	"module": "./dist/index.js",
 	"bin": "./dist/index.js",
 	"scripts": {
 		"start": "node ./dist/index.js",
 		"build": "tsdown",
+		"lint": "biome lint",
+		"format": "biome format --write",
 		"dev": "bun src/index.ts",
 		"copy-templates": "xcopy \"templates\" \"dist\\templates\" /E /I /Y",
 		"link": "bun run build && bun copy-templates && bun link"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
 		"@types/fs-extra": "^11.0.4",
 		"@types/node": "^22.15.30",
 		"drizzle-kit": "^0.31.1",

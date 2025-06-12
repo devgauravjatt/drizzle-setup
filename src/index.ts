@@ -2,12 +2,8 @@ import { select, spinner, text, confirm } from '@clack/prompts'
 import fs from 'fs-extra'
 import { fileURLToPath } from 'url'
 import path from 'path'
-import SQLiteDatabasesConfigs, {
-	getSQLiteDatabasesConfigs,
-} from './configs/databases/sqlite'
-import PostgresqlDatabasesConfigs, {
-	getPostgresqlDatabasesConfigs,
-} from './configs/databases/postgres_sql'
+import SQLiteDatabasesConfigs, { getSQLiteDatabasesConfigs } from './configs/databases/sqlite'
+import PostgresqlDatabasesConfigs, { getPostgresqlDatabasesConfigs } from './configs/databases/postgres_sql'
 import updateEnvFile from './utils/env-update'
 import createConfigFile from './utils/drizzle-config-update'
 import pkgMangerRun from './utils/pkg-manger-run'
@@ -15,10 +11,7 @@ import dbLists, { dbListsByValue } from './configs/dblists'
 import UpdateScripts from './utils/update-scripts'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const databaseConfigs = [
-	...PostgresqlDatabasesConfigs,
-	...SQLiteDatabasesConfigs,
-]
+const databaseConfigs = [...PostgresqlDatabasesConfigs, ...SQLiteDatabasesConfigs]
 
 const databaseGroups = {
 	PostgreSQL: getPostgresqlDatabasesConfigs(),
@@ -64,17 +57,11 @@ if (dbConfig === undefined) {
 	process.exit(0)
 }
 
-const templatePath = path.join(__dirname, dbConfig.template_path + '/db')
-const drizzle_configPath = path.join(
-	__dirname,
-	dbConfig.template_path + '/drizzle.config.ts'
-)
+const templatePath = path.join(__dirname, `${dbConfig.template_path}/db`)
+const drizzle_configPath = path.join(__dirname, `${dbConfig.template_path}/drizzle.config.ts`)
 const envVar = dbConfig.env_var
 const targetPath = path.resolve(process.cwd(), dbPath.toString())
-const drizzle_configTargetPath = path.resolve(
-	process.cwd(),
-	'drizzle.config.ts'
-)
+const drizzle_configTargetPath = path.resolve(process.cwd(), 'drizzle.config.ts')
 const scriptJsonPath = path.resolve(process.cwd(), 'package.json')
 
 try {
@@ -91,11 +78,7 @@ try {
 }
 
 try {
-	await createConfigFile(
-		drizzle_configTargetPath,
-		drizzle_configPath,
-		dbPath.toString()
-	)
+	await createConfigFile(drizzle_configTargetPath, drizzle_configPath, dbPath.toString())
 	// console.log(`  🛠 drizzle.config.ts added!`)
 } catch (error) {
 	console.error('🚨 Error copying and modifying drizzle.config.ts:', error)
@@ -139,9 +122,7 @@ if (!pkg_manger) {
 }
 
 const s = spinner({})
-s.start(
-	`Installing ${dbConfig.packages.join(', ')} with ${pkg_manger.toString()}...`
-)
+s.start(`Installing ${dbConfig.packages.join(', ')} with ${pkg_manger.toString()}...`)
 
 try {
 	await pkgMangerRun(pkg_manger, dbConfig)
@@ -151,12 +132,10 @@ try {
 		\n⚙  .env file vars at on top updated!
 		\n🛠  drizzle.config.ts added!
 		\n📑 package.json scripts updated!
-		\n✅ Drizzle Setup completed!`
+		\n✅ Drizzle Setup completed!`,
 	)
 } catch (err) {
 	s.stop('🚨 Failed to install packages')
-	console.error(
-		'😞 Installation failed. Please check your internet connection and \nverify that your package manager is installed and functioning correctly.'
-	)
+	console.error('😞 Installation failed. Please check your internet connection and \nverify that your package manager is installed and functioning correctly.')
 	process.exit(1)
 }

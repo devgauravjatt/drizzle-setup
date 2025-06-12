@@ -4,7 +4,7 @@ async function pkgMangerRun(
 	pkg_manger: symbol | 'bun' | 'yarn' | 'pnpm' | 'npm',
 	dbConfig: {
 		packages: string[]
-	}
+	},
 ) {
 	for (const rawPkg of dbConfig.packages) {
 		const parts = rawPkg.trim().split(' ')
@@ -17,18 +17,14 @@ async function pkgMangerRun(
 					? ['add', '-D', pkg]
 					: ['add', pkg]
 				: pkg_manger === 'yarn'
-				? isDev
-					? ['add', '--dev', pkg]
-					: ['add', pkg]
-				: isDev
-				? ['install', pkg, '--save-dev']
-				: ['install', pkg]
+					? isDev
+						? ['add', '--dev', pkg]
+						: ['add', pkg]
+					: isDev
+						? ['install', pkg, '--save-dev']
+						: ['install', pkg]
 
-		try {
-			await execa(pkg_manger.toString(), args, { stdio: 'ignore' })
-		} catch (err) {
-			throw err
-		}
+		await execa(pkg_manger.toString(), args, { stdio: 'ignore' })
 	}
 }
 

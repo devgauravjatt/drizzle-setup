@@ -45,8 +45,7 @@ async function updateAllEnvFiles(envVars: Record<string, string>) {
 		// Write updated content
 		if (exists && lines.length > 0) {
 			// Preserve existing content and add new vars
-			const content =
-				lines.join('\n') + (newVars.length > 0 ? '\n' + newVars.join('\n') : '')
+			const content = lines.join('\n') + (newVars.length > 0 ? `\n${newVars.join('\n')}` : '')
 			await fs.writeFile(envFilePath, content)
 		} else {
 			// Create new file with new vars

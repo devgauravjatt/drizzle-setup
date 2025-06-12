@@ -1,3 +1,5 @@
 {
-	"cSpell.words": ["libsql", "neondatabase", "Turso"]
+	"cSpell.words": ["devgauravjatt", "libsql", "neondatabase", "tsdown", "Turso"],
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "biomejs.biome"
 }
