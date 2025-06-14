@@ -66,11 +66,6 @@ The CLI will guide you through an interactive setup process:
 - **PlanetScale** – Serverless MySQL platform
 - **Railway MySQL** – Cloud MySQL hosting
 
-### Other Databases
-
-- **MongoDB** – NoSQL document database
-- **Redis** – In-memory data structure store
-
 > Each database type comes with pre-configured templates, optimized settings, and environment variables.
 
 ---
