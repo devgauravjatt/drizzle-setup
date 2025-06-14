@@ -7,62 +7,138 @@ A powerful CLI tool to automatically scaffold and configure database setup using
 ![NPM Downloads](https://img.shields.io/npm/dw/drizzle-setup?logo=npm&color=%23f75352)
 ![NPM Version](https://img.shields.io/npm/v/drizzle-setup?logo=npm&color=%23f75352)
 
+---
+
 ## ✨ Features
 
-- 📦 **Zero Config Setup** – Instantly scaffold DB structure and config with minimal input.
-- 📜 **Drizzle Scripts** – Automatically updates `package.json` with Drizzle CLI scripts.
-- 🔧 **.env Auto Update** – Automatically injects required environment variables.
-- 🧩 **Multiple DB Support** – Works seamlessly with PostgreSQL,SQLite,MySQL and More setups.
-- 📁 **Template Copying** – Instantly sets up a working `target-folder` structure.
+- 🚀 **Zero Configuration Setup** – Instantly scaffold database structure and config with minimal input
+- 📜 **Automated Script Generation** – Automatically updates `package.json` with essential Drizzle CLI scripts
+- 🔐 **Environment Management** – Automatically injects required environment variables into `.env`
+- 🗃️ **Multi-Database Support** – Seamlessly works with PostgreSQL, SQLite, MySQL, and other popular databases
+- 📁 **Template System** – Instantly sets up a working project structure with best practices
+- 🎯 **Interactive Setup** – Guided CLI experience with smart defaults
+- 📦 **Dependency Management** – Automatically installs required packages based on your database choice
 
 ---
 
 ## 🚀 Quick Start
 
-Just run the CLI in your project directory:
+Navigate to your project directory and run:
 
 ```bash
-npx drizzle-setup #or
-bunx drizzle-setup #or
-pnpm dlx drizzle-setup #or
+npx drizzle-setup
 ```
 
-You'll be guided through:
+The CLI will guide you through an interactive setup process:
 
-1. **Choosing your database** (PostgreSQL or SQLite moreover)
-2. **Selecting a config preset**
-3. **Specifying a target folder**
-4. **Copying boilerplate files**
-5. **Setting up `drizzle.config.ts`**
-6. **Updating `.env` and `package.json`**
-7. **Installing dependencies** via your chosen package manager
+### Setup Flow
 
----
-
-## 🧪 Supported Databases
-
-- PostgreSQL - Default, Neon, Vercel Postgres
-- SQLite - Default, Turso, Bun SQLite
-
-Each database type comes with its own pre-configured templates and `.env` variables.
+1. **🗄️ Database Selection** – Choose from PostgreSQL, SQLite, MySQL, and more
+2. **⚙️ Configuration Preset** – Select from optimized presets for different use cases
+3. **📁 Target Directory** – Specify where to create your database files
+4. **📋 Template Selection** – Choose from various boilerplate templates
+5. **🔧 Config Generation** – Automatically create `drizzle.config.ts`
+6. **🔐 Environment Setup** – Update `.env` with required variables
+7. **📦 Package Management** – Install dependencies via your preferred package manager
+8. **✅ Final Verification** – Ensure everything is set up correctly
 
 ---
 
-## 🧱 Directory Structure
+## 🗃️ Supported Databases
 
-After setup, your project might look like this:
+### PostgreSQL
+
+- **Default PostgreSQL** – Standard PostgreSQL setup
+- **Neon** – Serverless PostgreSQL with automatic scaling
+- **Supabase** – Open-source Firebase alternative
+- **Vercel Postgres** – Serverless PostgreSQL by Vercel
+
+### SQLite
+
+- **Default SQLite** – Local SQLite database
+- **Turso** – Edge SQLite database
+- **Bun SQLite** – High-performance SQLite with Bun runtime
+- **Cloudflare D1** – Serverless SQLite at the edge
+
+### MySQL
+
+- **Default MySQL** – Standard MySQL setup
+- **PlanetScale** – Serverless MySQL platform
+- **Railway MySQL** – Cloud MySQL hosting
+
+### Other Databases
+
+- **MongoDB** – NoSQL document database
+- **Redis** – In-memory data structure store
+
+> Each database type comes with pre-configured templates, optimized settings, and environment variables.
+
+---
+
+## 🏗️ Project Structure
+
+After setup, your project will have a clean, organized structure:
 
 ```
 project-root/
-├── drizzle.config.ts
-├── .env
-├── [target-folder]/
-│       ├── schema.ts
-│       └── index.ts
+├── node_modules/            # Installed dependencies
+├── drizzle.config.ts        # Drizzle configuration
+├── .env                     # Environment variables
+├── .env.example             # Example environment file
+├── package.json             # Updated with Drizzle scripts
+├── [target-folder]/         # Your database folder
+│   ├── schema.ts            # Database schema definitions
+│   ├── index.ts             # Database connection and exports
 ```
+
+---
+
+## Perfect for Modern Stacks 🏗️
+
+This tool shines especially bright with modern frameworks:
+
+### 🚀 **Astro Projects**
+
+```bash
+# In your Astro project
+npx drizzle-setup
+# Choose PostgreSQL + Vercel
+# Boom! Database ready for your Astro app
+```
+
+### ⚡ **Next.js Apps**
+
+```bash
+# Perfect for Next.js API routes
+npx drizzle-setup
+# Select your preferred database
+# Start building features, not configs
+```
+
+### 🎯 **Any JavaScript/TypeScript Project**
+
+Whether it's Express, Fastify, SvelteKit, or any other framework - this CLI has got you covered.
+
+---
+
+## Real-World Impact 📈
+
+**Before Drizzle Setup CLI:**
+
+- ⏰ 2-3 hours of setup time
+- 🐛 Configuration errors and typos
+- 📚 Constant reference to documentation
+- 😫 Frustration and context switching
+
+**After Drizzle Setup CLI:**
+
+- ⚡ 30 seconds to complete setup
+- ✅ Zero configuration errors
+- 🎯 Focus on building features
+- 😊 Happy developer experience
 
 ---
 
 ## 📄 License
 
-## MIT License
+MIT License © 2025 Drizzle Team
