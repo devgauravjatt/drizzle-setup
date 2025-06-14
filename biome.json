@@ -8,7 +8,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": ["pnpm-lock.yaml", "pnpm-workspace.yaml"]
+		"ignore": [".chglog/*", "pnpm-lock.yaml", "pnpm-workspace.yaml"]
 	},
 	"formatter": {
 		"enabled": true,

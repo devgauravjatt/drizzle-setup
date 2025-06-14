@@ -1,0 +1,54 @@
+style: github
+template: CHANGELOG.tpl.md
+info:
+  title: Changelog for drizzle-setup
+  repository_url: 'https://github.com/devgauravjatt/drizzle-setup'
+options:
+  commits:
+    filters:
+      Type:
+        - feature
+        - fix
+        - docs
+        - wip
+        - perfs
+        - rollback
+        - other
+        - feat
+        - ci
+        - build
+        - refactor
+        - style
+        - perf
+        - revert
+        - test
+        - chore
+
+  commit_groups:
+    title_maps:
+      feature: Feature
+      fix: Bug Fixes
+      docs: Documentation
+      wip: Work In Progress
+      perfs: Performance Improvements (legacy)
+      rollback: Rollback
+      other: Other
+      feat: Feature
+      ci: Continuous Integration
+      build: Build System
+      refactor: Refactoring
+      style: Code Style
+      perf: Performance Improvements
+      revert: Revert
+      test: Tests
+      chore: Chores
+
+  header:
+    pattern: "^(\\w*)\\:\\s(.*)$"
+    pattern_maps:
+      - Type
+      - Subject
+
+  notes:
+    keywords:
+      - BREAKING CHANGE
