@@ -28,7 +28,7 @@ importers:
         version: 0.11.4
     devDependencies:
       '@biomejs/biome':
-        specifier: ~2.0.6
+        specifier: ^2.0.6
         version: 2.0.6
       '@types/fs-extra':
         specifier: ^11.0.4
@@ -42,6 +42,9 @@ importers:
       drizzle-orm:
         specifier: latest
         version: 0.44.2
+      prettier:
+        specifier: ^3.6.2
+        version: 3.6.2
       tsdown:
         specifier: latest
         version: 0.12.9(typescript@5.8.3)
@@ -942,6 +945,11 @@ packages:
     resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
     engines: {node: '>=12'}
 
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   pretty-ms@9.2.0:
     resolution: {integrity: sha512-4yf0QO/sllf/1zbZWYnvWw3NxCQwLXKzIj0G849LSufP15BXKM0rbD2Z3wVnkMfjdn/CB0Dpp444gYAACdsplg==}
     engines: {node: '>=18'}
@@ -1775,6 +1783,8 @@ snapshots:
   picocolors@1.1.1: {}
 
   picomatch@4.0.2: {}
+
+  prettier@3.6.2: {}
 
   pretty-ms@9.2.0:
     dependencies:

@@ -135,7 +135,7 @@ try {
 		\n📑 package.json scripts updated!
 		\n✅ Drizzle Setup completed!`,
 	)
-} catch (err) {
+} catch (_err) {
 	s.stop('🚨 Failed to install packages')
 	console.error(
 		'😞 Installation failed. Please check your internet connection and \nverify that your package manager is installed and functioning correctly.',
