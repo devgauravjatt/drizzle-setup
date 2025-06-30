@@ -11,5 +11,5 @@ dist/
 **/*.yaml
 
 
-# add .chglog template file
-.chglog/CHANGELOG.tpl.md
+# add .chglog
+.chglog/**/*
