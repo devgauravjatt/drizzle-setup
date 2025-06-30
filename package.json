@@ -35,7 +35,9 @@
 	},
 	"license": "MIT",
 	"type": "module",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"main": "./dist/index.js",
 	"module": "./dist/index.js",
 	"bin": "./dist/index.js",
@@ -49,11 +51,11 @@
 		"link": "pnpm run build && pnpm copy-templates && pnpm link"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
+		"@biomejs/biome": "~2.0.6",
 		"@types/fs-extra": "^11.0.4",
-		"@types/node": "^22.15.30",
-		"drizzle-kit": "^0.31.1",
-		"drizzle-orm": "^0.44.2",
+		"@types/node": "^22.15.34",
+		"drizzle-kit": "latest",
+		"drizzle-orm": "latest",
 		"tsdown": "latest",
 		"typescript": "^5.8.3"
 	},
@@ -61,7 +63,7 @@
 		"@clack/prompts": "^0.11.0",
 		"execa": "^9.6.0",
 		"fs-extra": "^11.3.0",
-		"glob": "^11.0.2",
+		"glob": "^11.0.3",
 		"path": "^0.12.7",
 		"url": "^0.11.4"
 	}
