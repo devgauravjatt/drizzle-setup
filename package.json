@@ -45,17 +45,19 @@
 		"start": "node ./dist/index.js",
 		"build": "tsdown",
 		"lint": "biome lint",
+		"format": "prettier . --write",
 		"changelog": "git-chglog -o CHANGELOG.md",
 		"release": "pnpm build && pnpm copy-templates && pnpm publish",
 		"copy-templates": "xcopy \"templates\" \"dist\\templates\" /E /I /Y",
 		"link": "pnpm run build && pnpm copy-templates && pnpm link"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "~2.0.6",
+		"@biomejs/biome": "^2.0.6",
 		"@types/fs-extra": "^11.0.4",
 		"@types/node": "^22.15.34",
 		"drizzle-kit": "latest",
 		"drizzle-orm": "latest",
+		"prettier": "^3.6.2",
 		"tsdown": "latest",
 		"typescript": "^5.8.3"
 	},

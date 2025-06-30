@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
@@ -7,18 +7,13 @@
 		"defaultBranch": "main"
 	},
 	"files": {
-		"ignoreUnknown": false,
-		"ignore": [".chglog/*", "pnpm-lock.yaml", "pnpm-workspace.yaml"]
+		"ignoreUnknown": true,
+		"includes": ["src/**/*", "package.json", "biome.json", "templates/**/*"]
 	},
 	"formatter": {
-		"enabled": true,
-		"indentStyle": "tab",
-		"lineWidth": 110,
-		"indentWidth": 4
+		"enabled": false
 	},
-	"organizeImports": {
-		"enabled": true
-	},
+
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -26,8 +21,7 @@
 			"style": {
 				"noNonNullAssertion": "off"
 			}
-		},
-		"ignore": ["templates"]
+		}
 	},
 	"javascript": {
 		"formatter": {
