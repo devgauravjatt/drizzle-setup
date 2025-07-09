@@ -8,6 +8,18 @@ const MySQLlDatabasesConfigs = [
 		},
 		packages: ['drizzle-orm', 'mysql2', 'dotenv', 'drizzle-kit -D'],
 	},
+	{
+		name: 'PlanetScale',
+		path: 'planetscale',
+		template_path: 'templates/mysql/planetscale',
+		env_var: {
+			DATABASE_HOST: '',
+			DATABASE_USERNAME: '',
+			DATABASE_PASSWORD: '',
+			DATABASE_URL: '',
+		},
+		packages: ['drizzle-orm', '@planetscale/database', 'dotenv', 'drizzle-kit -D'],
+	},
 ]
 
 export function getMySQLlDatabasesConfigs() {
