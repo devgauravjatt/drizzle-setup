@@ -52,7 +52,7 @@
 		"link": "pnpm run build && pnpm copy-templates && pnpm link"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.0.6",
+		"@biomejs/biome": "^2.1.1",
 		"@types/fs-extra": "^11.0.4",
 		"@types/node": "^22.15.34",
 		"drizzle-kit": "latest",
