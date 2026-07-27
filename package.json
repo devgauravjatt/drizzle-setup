@@ -46,7 +46,6 @@
 		"build": "tsdown",
 		"lint": "biome lint",
 		"format": "prettier . --write",
-		"changelog": "git-chglog -o CHANGELOG.md",
 		"release": "pnpm build && pnpm copy-templates && pnpm publish",
 		"copy-templates": "xcopy \"templates\" \"dist\\templates\" /E /I /Y",
 		"link": "pnpm run build && pnpm copy-templates && pnpm link"
